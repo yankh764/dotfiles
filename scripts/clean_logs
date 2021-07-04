@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+logs_path="/var/log"
+
+for path in "$logs_path"/*; do 
+	if [ -f "$path" ]; then 
+		content=$(tail -n 500 "$path")
+		
+		echo "$content" > "$path"
+	fi
+done

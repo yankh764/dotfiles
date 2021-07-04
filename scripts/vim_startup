@@ -1,0 +1,4 @@
+#/usr/bin/env bash
+
+stty -ixon
+/usr/bin/vim -c "nnoremap <Tab> <Nop>" ~/Projects
