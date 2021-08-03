@@ -51,7 +51,9 @@ exec_always /usr/local/bin/monitors.sh
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
-exec swayidle -w before-sleep '$lock'
+exec swayidle -w \
+    before-sleep '$lock' \
+    after-resume 'monitors.sh'
 
 ### Input configuration
 #
@@ -263,11 +265,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86AudioRaiseVolume exec amixer -q -c 0 set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q -c 0 set Master 5%-
 bindsym XF86AudioMute exec mute_man
-#bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 #Monitors configs 
-bindsym Mod1+p output eDP-1 disable; output HDMI-A-1 enable
-bindsym Mod1+Shift+p exec monitors.sh
+bindsym Mod1+p exec monitors.sh
 
 #Internal monitor behaviour
 bindswitch --reload --locked lid:on output eDP-1 disable

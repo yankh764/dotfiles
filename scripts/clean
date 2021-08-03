@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm -rf /var/tmp/portage/*
+rm -rf /var/cache/edb/*
+
+eclean --deep distfiles
+eclean --deep packages

@@ -22,8 +22,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'Yohannfra/Vim-Goto-Header'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'frazrepo/vim-rainbow'
@@ -36,9 +34,7 @@ let g:onedark_hide_endofbuffer = 1
 let g:goto_header_use_find = 1
 let g:goto_header_includes_dirs = ["~/Projects/git"]
 let g:ctrlp_use_caching = 0
-let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ }
+let g:lightline = {'colorscheme': 'onedark'}
 
 colorscheme onedark
 
@@ -75,7 +71,6 @@ nmap <C-Down> :vertical resize -5 <CR>
 
 nmap <C-i> :w <bar> :source % <bar> :PlugInstall <CR>
 nmap <C-u> :w <bar> :source % <bar> :PlugClean <bar> :q <CR>
-nmap <C-p> :w <bar> :CtrlP <CR>
+nmap <Space>p :w <bar> :CtrlP <CR>
 nmap <Space>g :w <bar> :GotoHeaderSwitch <CR>
 nmap <C-g> :w <bar> :GotoHeader <CR>
-nmap <C-t> :NERDTree ~/Projects/git <bar> :vertical resize 22 <CR>
