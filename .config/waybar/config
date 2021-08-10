@@ -84,7 +84,7 @@
 	"network": {
         // "interface": "enp0s20f0u6", // (Optional) To force the use of this interface
         "format-wifi": " {essid} ({signalStrength}%)  ",
-        "format-ethernet": " {bandwidthUpBits}  ",
+        "format-ethernet": " {bandwidthUpBits}  ",
         // "format-linked": "{ifname} (No IP) ",
         "format-disconnected": " I: down ",
         // "format-alt": " {essid} ({signalStrength}%)   ",

@@ -28,7 +28,8 @@ Plug 'frazrepo/vim-rainbow'
 
 call plug#end()
 
-au FileType c,cpp call rainbow#load()
+
+au FileType c,cpp,py,sh call rainbow#load()
 
 let g:onedark_hide_endofbuffer = 1
 let g:goto_header_use_find = 1

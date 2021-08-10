@@ -1,0 +1,11 @@
+#!/usr/bin/env bash 
+
+printf "Please enter wifi's BSSID or SSID: "
+read -r wifi_id
+
+printf "Please enter wifi's password: "
+read -rs password
+
+printf "\n\n"
+
+nmcli device wifi connect "$wifi_id" password "$password"

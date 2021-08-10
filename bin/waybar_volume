@@ -4,6 +4,6 @@
 if amixer get Master | grep -q off; then 
 	echo 
 else
-	echo `amixer get Master | awk -F'[][]' 'END{ print $2 }'` 
+	echo $(amixer get Master | awk -F'[][]' 'END{ print $2 }') 
 fi
 

@@ -10,3 +10,6 @@ for path in "$log_dir"/*; do
 	fi
 done
 
+
+tail -n 500 /var/log/portage/elog/summary.log > "$tmp_file" 
+cat "$tmp_file" > /var/log/portage/elog/summary.log
