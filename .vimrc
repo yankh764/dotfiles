@@ -10,9 +10,10 @@ set noswapfile
 set nowrap
 set incsearch
 set laststatus=2
+set noshowmode
+set colorcolumn=80
 
 filetype indent on
-
 
 
 
@@ -25,19 +26,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
 Plug 'frazrepo/vim-rainbow'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
 
-au FileType c,cpp,py,sh call rainbow#load()
-
-let g:onedark_hide_endofbuffer = 1
-let g:goto_header_use_find = 1
-let g:goto_header_includes_dirs = ["~/Projects/git"]
-let g:ctrlp_use_caching = 0
-let g:lightline = {'colorscheme': 'onedark'}
-
-colorscheme onedark
 
 if (empty($TMUX))
       if (has("nvim"))
@@ -48,6 +41,31 @@ if (empty($TMUX))
             set termguicolors
       endif
 endif
+
+
+
+au FileType c,cpp,py,sh call rainbow#load()
+
+
+let g:onedark_hide_endofbuffer = 1
+let g:goto_header_use_find = 1
+let g:goto_header_includes_dirs = ["~/Projects/git"]
+let g:ctrlp_use_caching = 0
+let g:lightline = {
+      \ 'colorscheme': 'onedark',
+      \
+      \ 'active': {
+      \     'left': [ ['mode', 'paste'], ['readonly', 'filename', 'modified'], ['gitbranch'] ],
+      \     'right': [ ['lineinfo'], ['percent'], ['fileformat', 'filetype'] ]
+      \     },
+      \
+      \ 'component_function': {
+      \     'gitbranch': 'FugitiveHead'
+      \     },
+      \ }
+
+colorscheme onedark
+
                   
 
 
@@ -57,7 +75,7 @@ nmap <C-q> :wq <CR>
 nmap <C-c> :q! <CR>
 nmap <C-s> :w <bar> :source ~/.vimrc <CR>
 nmap <C-u> :undo <CR>
-nmap <r> :redo <CR>
+nmap <r>   :redo <CR>
 nmap <C-m> :noh <CR>
 nmap <C-l> :wincmd l <CR>
 nmap <C-j> :wincmd j <CR>
