@@ -243,9 +243,6 @@ bindsym Mod4+v exec alacritty -e vim_startup
 #Start firefox
 bindsym Mod4+f exec firefox
 
-#Start WeeChat
-bindsym Mod4+w exec alacritty -e weechat
-
 #Lock screen
 bindsym Mod4+l exec $lock
 

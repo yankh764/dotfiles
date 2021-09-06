@@ -1,7 +1,8 @@
 syntax on
 
 set noerrorbells
-set tabstop=4 softtabstop=4
+set tabstop=4 
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
@@ -11,7 +12,13 @@ set nowrap
 set incsearch
 set laststatus=2
 set noshowmode
-set colorcolumn=80
+set backspace=indent,eol,start
+set scrolloff=13
+set ignorecase smartcase 
+
+au FileType c,cpp,py,sh call rainbow#load()
+au FileType c,py set colorcolumn=80
+au Filetype markdown set spell spelllang=en_us
 
 filetype indent on
 
@@ -44,8 +51,7 @@ endif
 
 
 
-au FileType c,cpp,py,sh call rainbow#load()
-
+colorscheme onedark
 
 let g:onedark_hide_endofbuffer = 1
 let g:goto_header_use_find = 1
@@ -55,7 +61,7 @@ let g:lightline = {
       \ 'colorscheme': 'onedark',
       \
       \ 'active': {
-      \     'left': [ ['mode', 'paste'], ['readonly', 'filename', 'modified'], ['gitbranch'] ],
+      \     'left': [ ['mode', 'paste'], ['readonly', 'filename', 'modified', 'gitbranch'] ],
       \     'right': [ ['lineinfo'], ['percent'], ['fileformat', 'filetype'] ]
       \     },
       \
@@ -64,18 +70,18 @@ let g:lightline = {
       \     },
       \ }
 
-colorscheme onedark
 
                   
 
 
 
+nmap <C-e> :w <bar> :Ex <CR>
 nmap <C-w> :w <CR>
 nmap <C-q> :wq <CR>
 nmap <C-c> :q! <CR>
 nmap <C-s> :w <bar> :source ~/.vimrc <CR>
 nmap <C-u> :undo <CR>
-nmap <r>   :redo <CR>
+nmap <C-r> :redo <CR>
 nmap <C-m> :noh <CR>
 nmap <C-l> :wincmd l <CR>
 nmap <C-j> :wincmd j <CR>
@@ -93,3 +99,4 @@ nmap <C-u> :w <bar> :source % <bar> :PlugClean <bar> :q <CR>
 nmap <Space>p :w <bar> :CtrlP <CR>
 nmap <Space>g :w <bar> :GotoHeaderSwitch <CR>
 nmap <C-g> :w <bar> :GotoHeader <CR>
+
