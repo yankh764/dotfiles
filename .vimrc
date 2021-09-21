@@ -16,9 +16,11 @@ set backspace=indent,eol,start
 set scrolloff=13
 set ignorecase smartcase 
 
-au FileType c,cpp,py,sh call rainbow#load()
+au FileType c,cpp,py,sh,arduino call rainbow#load()
 au FileType c,py set colorcolumn=80
 au Filetype markdown set spell spelllang=en_us
+
+autocmd BufNew,BufNewFile,BufRead *.h :setfiletype c
 
 filetype indent on
 

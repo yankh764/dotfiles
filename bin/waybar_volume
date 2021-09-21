@@ -1,9 +1,7 @@
 #!/usr/bin/env bash 
 
-
-if amixer get Master | grep -q off; then 
-	echo 
+if amixer -D bluealsa | grep -q WH-1000XM4; then
+	waybar_volume_sony
 else
-	echo $(amixer get Master | awk -F'[][]' 'END{ print $2 }') 
+	waybar_volume_master
 fi
-

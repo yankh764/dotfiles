@@ -1,6 +1,8 @@
 #!/usr/bin/env bash 
 
-printf "Please enter wifi's BSSID or SSID: "
+nmcli device wifi list
+
+printf "\n\nPlease enter wifi's SSID: "
 read -r wifi_id
 
 printf "Please enter wifi's password: "

@@ -71,9 +71,8 @@ window#waybar.termite {
 #memory,
 #temperature,
 #disk,
-#custom-alsa,
-#network
-{
+#pulseaudio,
+#network {
     padding: 0 5px;
     margin: 6px 4px;
     color: #e0e0e0;
@@ -165,4 +164,12 @@ window#waybar.termite {
 
 #network.disconnected {
 	background-color: #eb4d4b;
+}
+
+#pulseaudio {
+    background-color: #4b5467;
+}
+
+#pulseaudio.muted {
+    background-color: #4b5467;
 }

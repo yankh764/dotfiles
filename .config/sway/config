@@ -153,8 +153,8 @@ input "type:keyboard" {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    #bindsym $mod+h splith
+    #bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -243,6 +243,9 @@ bindsym Mod4+v exec alacritty -e vim_startup
 #Start firefox
 bindsym Mod4+f exec firefox
 
+#Start librewolf
+bindsym Mod4+w exec librewolf
+
 #Lock screen
 bindsym Mod4+l exec $lock
 
@@ -259,9 +262,9 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 #Sound control keys
-bindsym XF86AudioRaiseVolume exec amixer -q -c 0 set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -q -c 0 set Master 5%-
-bindsym XF86AudioMute exec mute_man
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #Monitors configs 
 bindsym Mod1+p exec monitors.sh
@@ -270,14 +273,8 @@ bindsym Mod1+p exec monitors.sh
 bindswitch --reload --locked lid:on output eDP-1 disable
 bindswitch --reload --locked lid:off output eDP-1 enable
 
-#GTK themes configs
-#exec_always {
-#    gsettings set $gnome-schema gtk-theme 'Arc-Darker'
-#    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-#    gsettings set $gnome-schema cursor-theme 'Adwita-dark'
-#    gsettings set $gnome-schema font-name 'Ubuntu Condensed'
-#}
-
+#Connect/Disconnect Sony headphones
+bindsym Mod1+b exec connect_sony
 
 ######################
 #  Power Management  #
@@ -291,3 +288,6 @@ bindsym Mod4+Mod1+p exec loginctl poweroff
 
 #Reboot
 bindsym Mod4+Mod1+r exec loginctl reboot
+
+#Reboot to BIOS
+bindsym Mod4+Mod1+f exec loginctl reboot --firmware-setup

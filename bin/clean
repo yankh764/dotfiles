@@ -5,6 +5,7 @@ rm -rf /var/tmp/portage/.[^.]*
 rm -rf /var/cache/edb/*
 rm -rf /var/cache/edb/.[^.]*
 rm -rf /home/yan/.cache/mozilla/firefox/w4ezgfe0.default-esr/cache2
+rm -rf /home/yan/.cache/librewolf/bti4insi.default-release/cache2
 rm -rf /home/yan/.cache/mesa_shader_cache
 rm -rf /var/tmp/genkernel/*
 rm -rf /var/tmp/genkernel/.[^.]*

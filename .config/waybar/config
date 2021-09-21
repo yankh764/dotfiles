@@ -10,7 +10,7 @@
 	// Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["memory", "temperature", "network", "disk", "custom/alsa", "battery"],
+    "modules-right": ["memory", "temperature", "network", "disk", "pulseaudio", "battery"],
     
 	// Modules configuration
      "sway/workspaces": {
@@ -33,14 +33,16 @@
     },
     
 	"clock": {
+        "interval": 1,
         // "timezone": "America/New_York",
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"format": " {:%H:%M} ",
-		"format-alt": "  {:%Y-%m-%d}  ",
+		"format-alt": " {:%Y-%m-%d} ",
 		"tooltip": false
     },
     
 	"cpu": {
+        "interval": 1,
         "format": "{usage}% ",
         "tooltip": false
     },
@@ -58,7 +60,8 @@
 		"critical-threshold": 75,
         "format-critical": " {temperatureC}°C  ",
         "format": " {temperatureC}°C  ",
-        // "format-icons": ["", "", ""]
+        // "format-icons": ["", "", ""], 
+        "tooltip": false
     },
     
 	"backlight": {
@@ -73,10 +76,10 @@
             "warning": 20,
             "critical": 10
         },
-		"interval": 30, 
+		"interval": 1, 
         "format": " {capacity}% {icon}",
         "format-charging": " {capacity}%  ",
-        // "format-plugged": "{capacity}%  ",
+        "format-plugged": " {capacity}%  ",
         // "format-full": " {capacity}%   ",
         "format-icons": [" ", " ", " ", " ", " "], 
 		"tooltip": false
@@ -90,11 +93,11 @@
         "format-disconnected": " I: down ",
         // "format-alt": " {essid} ({signalStrength}%)   ",
 		"tooltip": false, 
-		"interval": 30
+		"interval": 1
     },
     
 	"disk": {
-		"interval": 10,
+		"interval": 1,
 		"format": " {free}  ",
 		"path": "/", 
 		"tooltip": false
@@ -110,4 +113,16 @@
 		"exec": "waybar_volume",
 		"tooltip": false
 	},
+
+    "pulseaudio": {
+        "interval": 1,
+        "format": " {volume}% {icon} ",
+        "format-bluetooth": " {volume}%  ",
+        "format-bluetooth-muted": "  ",
+        "format-muted": "  ",
+        "format-icons": {
+            "default": ["", "", ""]
+        }, 
+        "tooltip": false
+    },
 }

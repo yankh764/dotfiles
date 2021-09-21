@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-if amixer | grep off | grep -q Mono ; then 
-	amixer -c 0 set Master unmute
-else 
-	amixer -c 0 set Master mute
+if amixer -D bluealsa | grep -q WH-1000XM4; then 
+	amixer -q -D bluealsa set 'WH-1000XM4 - A2DP' toggle
+else
+	amixer -q set Master toggle
 fi
