@@ -1,24 +1,24 @@
 syntax on
 
 set noerrorbells
-set tabstop=4 
-set softtabstop=4
+set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
 set nu
-set noswapfile
 set nowrap
+set noswapfile
 set incsearch
-set laststatus=2
 set noshowmode
+set laststatus=2
 set backspace=indent,eol,start
 set scrolloff=13
-set ignorecase smartcase 
+set smartcase 
 
 au FileType c,cpp,py,sh,arduino call rainbow#load()
 au FileType c,py set colorcolumn=80
 au Filetype markdown set spell spelllang=en_us
+au FileType c,cpp set tabstop=8 softtabstop=8 shiftwidth=8
 
 autocmd BufNew,BufNewFile,BufRead *.h :setfiletype c
 
@@ -30,7 +30,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'joshdick/onedark.vim'
 Plug 'Yohannfra/Vim-Goto-Header'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
@@ -58,7 +57,6 @@ colorscheme onedark
 let g:onedark_hide_endofbuffer = 1
 let g:goto_header_use_find = 1
 let g:goto_header_includes_dirs = ["~/Projects/git"]
-let g:ctrlp_use_caching = 0
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \
@@ -76,14 +74,11 @@ let g:lightline = {
                   
 
 
-
 nmap <C-e> :w <bar> :Ex <CR>
 nmap <C-w> :w <CR>
 nmap <C-q> :wq <CR>
 nmap <C-c> :q! <CR>
 nmap <C-s> :w <bar> :source ~/.vimrc <CR>
-nmap <C-u> :undo <CR>
-nmap <C-r> :redo <CR>
 nmap <C-m> :noh <CR>
 nmap <C-l> :wincmd l <CR>
 nmap <C-j> :wincmd j <CR>
@@ -98,7 +93,7 @@ nmap <C-Down> :vertical resize -5 <CR>
 
 nmap <C-i> :w <bar> :source % <bar> :PlugInstall <CR>
 nmap <C-u> :w <bar> :source % <bar> :PlugClean <bar> :q <CR>
-nmap <Space>p :w <bar> :CtrlP <CR>
+nmap <Space>p :w <bar> :CtrlP ~/Projects <CR>
 nmap <Space>g :w <bar> :GotoHeaderSwitch <CR>
 nmap <C-g> :w <bar> :GotoHeader <CR>
 

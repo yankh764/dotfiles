@@ -79,8 +79,6 @@
 		"interval": 1, 
         "format": " {capacity}% {icon}",
         "format-charging": " {capacity}%  ",
-        "format-plugged": " {capacity}%  ",
-        // "format-full": " {capacity}%   ",
         "format-icons": [" ", " ", " ", " ", " "], 
 		"tooltip": false
     },
@@ -93,7 +91,7 @@
         "format-disconnected": " I: down ",
         // "format-alt": " {essid} ({signalStrength}%)   ",
 		"tooltip": false, 
-		"interval": 1
+		"interval": 10
     },
     
 	"disk": {
