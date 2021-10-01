@@ -65,7 +65,7 @@ input 1739:52781:MSFT0001:00_06CB:CE2D_Touchpad {
 
 #Keyboard
 input "type:keyboard" {
-    xkb_layout us,il
+    xkb_layout us,il,ar
     xkb_options grp:win_space_toggle
 }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -246,6 +246,9 @@ bindsym Mod4+f exec firefox
 #Start librewolf
 bindsym Mod4+w exec librewolf
 
+#Start libreoffice
+bindsym Mod4+o exec libreoffice
+
 #Lock screen
 bindsym Mod4+l exec $lock
 
@@ -291,3 +294,4 @@ bindsym Mod4+Mod1+r exec loginctl reboot
 
 #Reboot to BIOS
 bindsym Mod4+Mod1+f exec loginctl reboot --firmware-setup
+

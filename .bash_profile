@@ -18,7 +18,7 @@ fi
 
 # Start sway session om tty1 login 
 if [ "$(tty)" == "/dev/tty1" ]; then
-  exec dbus-run-session sway
+  exec dbus-run-session sway 2>> /tmp/wayland_session.log
 fi
 
 
