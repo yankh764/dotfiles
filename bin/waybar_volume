@@ -1,7 +1,0 @@
-#!/usr/bin/env bash 
-
-if amixer -D bluealsa | grep -q WH-1000XM4; then
-	waybar_volume_sony
-else
-	waybar_volume_master
-fi

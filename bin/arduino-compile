@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-arduino-cli compile -p /dev/ttyUSB0 -b arduino:avr:nano:cpu=atmega328old $(pwd)

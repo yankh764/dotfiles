@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+spotifyd --no-daemon & spt && kill $(pgrep spotifyd)

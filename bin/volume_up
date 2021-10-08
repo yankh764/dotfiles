@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if amixer -D bluealsa | grep -q WH-1000XM4; then
-	amixer -q -D bluealsa set 'WH-1000XM4 - A2DP' 5%+
-else 
-	amixer -q set Master 5%+
-fi

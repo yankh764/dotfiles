@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+touch /home/yan/timefix
+
+sudo find / -cnewer /home/yan/timefix -exec touch {} \;
+
+rm /home/yan/timefix

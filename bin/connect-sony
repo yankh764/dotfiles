@@ -1,0 +1,7 @@
+#!/usr/bin/env bash 
+
+if bluetoothctl info | grep -q WH-1000XM4; then 
+	bluetoothctl disconnect 94:DB:56:F0:64:3F
+else
+	bluetoothctl connect 94:DB:56:F0:64:3F
+fi

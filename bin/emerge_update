@@ -1,4 +1,0 @@
-#!/usr/bin/env bash 
-
-emerge --sync
-emerge -auvDN @world

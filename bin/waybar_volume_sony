@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-
-if amixer -D bluealsa get 'WH-1000XM4 - A2DP' | grep -q off; then
-	echo 
-else
-	echo $(amixer -D bluealsa get 'WH-1000XM4 - A2DP' | awk -F'[][]' 'END{ print $2 }') 
-fi
