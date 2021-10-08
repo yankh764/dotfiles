@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [ "$UID" -ne 0 ]; then 
+	echo Error: Permission denied
+	exit 1
+fi
+
+if lsblk -f | grep HDD | grep -q /mnt/HDD; then 
+	if ! umount /mnt/HDD; then 
+		exit 1
+	fi
+
+	echo Unmounting HDD
+else 
+	if ! mount UUID=9dd86e7a-4995-414c-906f-489ca8cc1c3b /mnt/HDD/; then 
+		exit 1
+	fi
+	
+	echo Mounting HDD
+fi
