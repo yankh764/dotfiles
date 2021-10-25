@@ -1,4 +1,3 @@
 #!/usr/bin/env bash 
 
-emerge --sync
-emerge -auvDN @world
+emerge --sync && emerge -auvDN @world

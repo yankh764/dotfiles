@@ -24,5 +24,5 @@ fi
 
 
 #Environment variables 
-#MOZ_ENABLE_WAYLAND=1 #Env variable for firefox
 MOZ_USE_XINPUT2=1 #Smooth touch
+MOZ_ENABLE_WAYLAND=1

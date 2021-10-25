@@ -19,5 +19,3 @@ fi
 neofetch 
 
 stty -ixon
-
-alias vim="vim -c 'source ~/.vimrc'"

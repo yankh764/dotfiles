@@ -1,10 +1,11 @@
 syntax on
 
+set title
 set noerrorbells
 set tabstop=4 
 set softtabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
 set smartindent
 set nu
 set noswapfile
@@ -16,7 +17,6 @@ set backspace=indent,eol,start
 set scrolloff=13
 set smartcase 
 
-
 au FileType c,cpp,py,sh,arduino call rainbow#load()
 au FileType c,cpp,py set colorcolumn=80
 au Filetype markdown set spell spelllang=en_us
@@ -26,7 +26,7 @@ au BufNew,BufRead,BufWritePost *.h setfiletype c
 au VimEnter * nnoremap <Tab> <Nop>
 
 
-filetype indent on
+filetype plugin indent on
 
 
 call plug#begin('~/.vim/plugged')
@@ -92,6 +92,7 @@ nmap <C-n>v :vnew <CR>
 nmap <C-n>h :new <CR>
 nmap <C-Up> :vertical resize +5 <CR>
 nmap <C-Down> :vertical resize -5 <CR>
+nmap <C-m> :noh <CR>
 
 nmap <C-i> :w <bar> :source % <bar> :PlugInstall <CR>
 nmap <C-u> :w <bar> :source % <bar> :PlugClean <bar> :q <CR>

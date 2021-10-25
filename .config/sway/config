@@ -225,7 +225,7 @@ client.urgent             $ubgcolor   $ubgcolor       $textcolor  $ubgcolor    $
 #     On Startup     #
 ######################
 
-exec waybar
+exec waybar-git
 
 exec swaymsg "workspace 1; exec $term"
 exec swaymsg "workspace 2; exec firefox"
