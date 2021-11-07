@@ -93,6 +93,7 @@ nmap <C-n>h :new <CR>
 nmap <C-Up> :vertical resize +5 <CR>
 nmap <C-Down> :vertical resize -5 <CR>
 nmap <C-m> :noh <CR>
+nmap <C-t> :bel vert term <CR>
 
 nmap <C-i> :w <bar> :source % <bar> :PlugInstall <CR>
 nmap <C-u> :w <bar> :source % <bar> :PlugClean <bar> :q <CR>

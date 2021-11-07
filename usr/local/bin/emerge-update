@@ -1,3 +1,12 @@
 #!/usr/bin/env bash 
 
+if [ "$UID" -ne 0 ]; then
+	echo Error: Permission denied
+	exit 1
+fi
+
 emerge --sync && emerge -auvDN @world
+
+if [ $? -eq 0 ]; then 
+    emerge -ac
+fi

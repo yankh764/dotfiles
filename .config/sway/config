@@ -256,7 +256,7 @@ bindsym Mod4+b exec baobab
 bindsym Mod4+s exec $term -e spotify-tui
 
 #Lock screen
-bindsym Mod4+l exec $lock
+#bindsym Mod4+l exec $lock
 
 #Take screenshot
 bindsym Print exec grim Pictures/$(date +"%T_%F_grim.png")
